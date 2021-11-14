@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/booking.css" />
+    <title>HodoPhile : Booking</title>
+</head>
+
+<body>
+    <a href="/">
+        <div id="brandName" class="brandName">
+            <h1 id="name">HodoPhile</h1>
+            <p id="tag">Safe and Quick</p>
+        </div>
+    </a>
+    <div id="total__bg">
+        <div class="route">
+            <div>
+                <div id="startDest"></div>
+                <img id="startDestImg" />
+            </div>
+            <div class="graph__wrapper">
+
+                <div id="arrowAnim">
+                    <div class="arrowSliding">
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="arrowSliding delay1">
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="arrowSliding delay2">
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="arrowSliding delay3">
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="destination">
+                <div id="endDest"></div>
+                <img id="endDestImg" />
+            </div>
+        </div>
+        <div id="flight__1" class="flight__details">
+            <div class="flightNameAndPrice">
+                <div id="flightName1" class="flightName"></div>
+                <div id="price1" class="price"></div>
+            </div>
+            <div class="time__interval">
+                <div id="departureTime1" class="departureTime"></div>
+                <div id="timeTravelled1" class="timeTravelled"></div>
+                <div id="reachingTime1" class="reachingTime"></div>
+            </div>
+            <div class="price__total">
+                <div id="availableSeats1" class="availableSeats"></div>
+                <a href="#demo-modal" id="bookTickets1" class="bookTickets">Book Tickets</a>
+            </div>
+        </div>
+        <div id="flight__2" class="flight__details">
+            <div class="flightNameAndPrice">
+                <div id="flightName2" class="flightName"></div>
+                <div id="price2" class="price"></div>
+            </div>
+            <div class="time__interval">
+                <div id="departureTime2" class="departureTime"></div>
+                <div id="timeTravelled2" class="timeTravelled"></div>
+                <div id="reachingTime2" class="reachingTime"></div>
+            </div>
+            <div class="price__total">
+                <div id="availableSeats2" class="availableSeats"></div>
+                <a href="#demo-modal" id="bookTickets2" class="bookTickets">Book Tickets</a>
+            </div>
+        </div>
+        <div id="flight__3" class="flight__details">
+            <div class="flightNameAndPrice">
+                <div id="flightName3" class="flightName"></div>
+                <div id="price3" class="price"></div>
+            </div>
+            <div class="time__interval">
+                <div id="departureTime3" class="departureTime"></div>
+                <div id="timeTravelled3" class="timeTravelled"></div>
+                <div id="reachingTime3" class="reachingTime"></div>
+            </div>
+            <div class="price__total">
+                <div id="availableSeats3" class="availableSeats"></div>
+                <a href="#demo-modal" id="bookTickets3" class="bookTickets">Book Tickets</a>
+            </div>
+        </div>
+        <div id="flight__4" class="flight__details">
+            <div class="flightNameAndPrice">
+                <div id="flightName4" class="flightName"></div>
+                <div id="price4" class="price"></div>
+            </div>
+            <div class="time__interval">
+                <div id="departureTime4" class="departureTime"></div>
+                <div id="timeTravelled4" class="timeTravelled"></div>
+                <div id="reachingTime4" class="reachingTime"></div>
+            </div>
+            <div class="price__total">
+                <div id="availableSeats4" class="availableSeats"></div>
+                <a href="#demo-modal" id="bookTickets4" class="bookTickets">Book Tickets</a>
+            </div>
+        </div>
+        <div id="flight__5" class="flight__details">
+            <div class="flightNameAndPrice">
+                <div id="flightName5" class="flightName"></div>
+                <div id="price5" class="price"></div>
+            </div>
+            <div class="time__interval">
+                <div id="departureTime5" class="departureTime"></div>
+                <div id="timeTravelled5" class="timeTravelled"></div>
+                <div id="reachingTime5" class="reachingTime"></div>
+            </div>
+            <div class="price__total">
+                <div id="availableSeats5" class="availableSeats"></div>
+                <a href="#demo-modal" id="bookTickets5" class="bookTickets">Book Tickets</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="demo-modal" class="modal">
+        <div class="modal__content">
+            <h1>More Details</h1>
+
+            <form action="/payment.html" class="passengerDetailsForm">
+
+                <div>
+                    <!-- <label for="fullname">Name</label> -->
+                    <input type="text" id="fullname" name="fullname" placeholder="Name" required>
+                </div>
+                <div>
+                    <!-- <label for="email">Email</label> -->
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div>
+                    <!-- <label for="phno">Phone Number</label> -->
+                    <input type="tel" id="phno" name="phno" placeholder="Phone Number" required>
+                </div>
+                <div>
+                    <!-- <label for="noofPassengers">No of Passengers</label> -->
+                    <input type="number" id="noofPassengers" name="noofPassengers" placeholder="No of Passengers"
+                        required>
+                </div>
+                <div id="cabin">
+                    <label for="airshipClass">Cabin Class</label>
+                    <select id="airshipClass" class="box" name="airshipClass" required>
+                        <option selected disabled>Select...</option>
+                        <option value="firstClass">First Class</option>
+                        <option value="businessClass">Business Class</option>
+                        <option value="economyClass">Economy Class</option>
+                    </select>
+                </div>
+                <div>
+                    <button id="finalBookTickets">Book</button>
+                </div>
+            </form>
+            <a href="#" class="modal__close">&times;</a>
+        </div>
+    </div>
+    <script src="booking.js"></script>
+</body>
+
+</html>

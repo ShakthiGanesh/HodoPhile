@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    /* background: #17182f; */
+    font-family: "Open Sans";
+    width: 100vw;
+    height: fit-content;
+    overflow-x: hidden;
+    color: #ffffff;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.brandName {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    width: max-content;
+}
+
+.brandName>h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 60px;
+    margin: 0;
+    font-family: 'Rampart One';
+    opacity: 1;
+    animation-name: appear;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-delay: 3s;
+    animation-direction: initial;
+    animation-iteration-count: 1;
+    /* animation-fill-mode: none; */
+    animation-play-state: running;
+
+}
+
+small.click-drag {
+    position: absolute;
+    top: 93vh;
+    left: 30px;
+    font-size: 17px;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.brandName>p {
+    font-size: 20px;
+    color: #ffffff;
+    text-align: end;
+    padding-right: 5px;
+    animation-name: appear;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-delay: 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: none;
+    animation-play-state: running;
+
+}
+
+canvas {
+    background-image: url('/images/galaxy-night.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    max-height: 100vh;
+
+}
+
+.container {
+    background-color: #000015;
+    margin-top: -5px;
+    height: fit-content;
+    padding-top: 70px;
+}
+
+select {
+    background-color: rgba(255, 245, 240,0.8);
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.style-fixed {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, 0%);
+    background-color: rgba(255, 245, 240,0.8);
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: animate 1s;
+}
+@keyframes animate {
+    0%,50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.style-h1 {
+    font-size: 30px !important;
+    color: #000015 !important;
+}
+
+.style-p {
+    font-size: 10px !important;
+    text-align: center !important;
+    margin-left: 90px;
+    color: #000015 !important;
+}
+
+form > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+form > div > label {
+    font-size: 20px;
+    padding: 2px;
+    font-weight: 600;
+}
+
+form > button {
+    padding: 10px 15px;
+    background-color: #000015;
+    color: rgba(255, 245, 240,0.8);
+    border-radius: 7px;
+    border: 0;
+    font-weight: bold;
+    margin-top: 7px;
+}
+
+form {
+    /* box-sizing: border-box; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    width: 23vw;
+    /* margin: auto; */
+    justify-content: space-around;
+    background-color:rgba(255, 245, 240,1);
+    color: #000015;
+    padding: 10px;
+    border-radius: 10px;
+}
+input#date {
+    border-radius: 7px;
+    background-color:rgba(255, 245, 240,1);
+    border: 1px black dotted;
+    padding: 3px;
+}
+
+.whyHodophile  {
+    width: 90vw;
+    margin: auto;
+    font-family: "Open Sans";
+}
+.whyHodophile > div{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.whyHodophile > div > div {
+    flex: 0.33;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    text-align: center;
+    align-items: center;
+    height: max-content;
+    margin-bottom: 20px;
+}
+
+.whyHodophile > div  p {
+    padding: 10px 30px;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.whyHodophile h1 {
+    padding-top: 15px;
+}
+
+.whyHodophile img {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 7.5vw;
+    box-shadow: 2px 1px 10px #ffffff;
+    margin: 10px 0;
+}
+
+.journey {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+.journey img {
+    transform: rotate(0deg);
+    width: 230px;
+    height: 230px;
+    padding-left: 80px;
+    margin-top: -200px;
+    margin-left: -85px;
+}
+#smoke {
+    margin-top: 240px;
+    transform: rotate(0deg);
+    margin-right: -60px;
+}
+
+footer {
+    height: 40px;
+    background-color: rgba(255, 245, 240,0.75);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer h2 {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    color: #000015  ;
+}
+footer img {
+    width: 30px;
+    height: 30px;
+    padding-top: 7px;
+    margin: 0 7px;
+}
+#linkedin {
+    zoom: 75%;
+    border-radius: 5px;
+    /* margin-left: 3px; */
+}
+#portfolio {
+    zoom: 90%;
+}
+#copyright {
+    width: 100vw;
+    background-color: rgba(255, 245, 240,0.75);
+    margin: 0;
+    padding: 3px;
+    color: #000015;
+    font-size: 13px;
+    text-align: center;
+}
+#alert {
+    color: red;
+    display: block;
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+#loading {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000015;
+    z-index: 100;
+}
+body {
+    overflow: hidden;
+}
+#loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+#loading-rocket {
+    transform: rotate(-45deg);
+    width: 200px;
+    animation: vibrate 2s,uplift 1s forwards 2s;
+}
+
+@keyframes uplift {
+    0%,50% {
+        margin: 0;
+    }
+    100% {
+        margin-bottom: 100vh;
+    }
+}
+@keyframes vibrate {
+    0% { -webkit-transform: translate(2px, 1px) rotate(-45deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-45deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(-45deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(-45deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(-45deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-45deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(-45deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-45deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(-45deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(-45deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-45deg); 
+    }
+}
+
+#loading-smoke {
+    transform: rotate(-45deg);
+    width: 150px;
+    margin-bottom: -10px;
+    animation: down 1s forwards 1.9s;
+}
+@keyframes down{
+    0%,50% {
+        display: block
+    }
+    100% {
+        display: hidden;
+        opacity: 0;
+    }
+}

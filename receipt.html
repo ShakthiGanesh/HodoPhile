@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/receipt.css">
+    <title>HodoPhile : Receipt</title>
+</head>
+
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            //today's date
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0');
+            var yyyy = today.getFullYear();
+
+            today = dd + ' / ' + mm + ' / ' + yyyy;
+            document.getElementById("bookDate").innerHTML = today;
+            //seats
+            var spaceShip = JSON.parse(sessionStorage.spaceShip);
+            var spaceShipDetails = JSON.parse(sessionStorage.spaceShipDetails);
+            var seats = spaceShip.noofPassengers;
+            var s = "";
+            for (let index = 0; index < seats; index++) {
+                s += "A1" + index + " ";
+
+            }
+            document.getElementById("seats").innerHTML = s;
+            //flight
+            document.getElementById("flight").innerHTML = spaceShipDetails.flightName;
+            //start
+            document.getElementById("start").innerHTML = spaceShip.startLocation;
+            //destination
+            document.getElementById("destination").innerHTML = spaceShip.endLocation;
+            //duration
+            document.getElementById("duration").innerHTML = spaceShipDetails.timeTravel;
+            //passengers
+            document.getElementById("passengers").innerHTML = seats;
+            //total
+            var pricePerHead = spaceShipDetails.cost;
+            console.log(pricePerHead)
+            pricePerHead = pricePerHead.substring(7);
+            var total = seats * parseInt(pricePerHead);
+            document.getElementById("total").innerHTML = total;
+            //cabin
+            document.getElementById("cabin").innerHTML = spaceShip.airshipClass.charAt(0).toUpperCase() + spaceShip.airshipClass.slice(1);
+            //name
+            document.getElementById("Personname").innerHTML = spaceShip.name;
+            //mobile
+            document.getElementById("mobile").innerHTML = spaceShip.phno;
+            //journeyDate
+            var journeyDate = new Date(spaceShip.dateOfTravel);
+            var dd = String(journeyDate.getDate()).padStart(2, '0');
+            var mm = String(journeyDate.getMonth() + 1).padStart(2, '0');
+            var yyyy = journeyDate.getFullYear();
+
+            journeyDate = dd + ' / ' + mm + ' / ' + yyyy;
+            document.getElementById("journeyDate").innerHTML = journeyDate + " " + spaceShipDetails.departureTime;
+            //email
+            document.getElementById("email").innerHTML = spaceShip.email;
+        });
+    </script>
+    <a href="/">
+        <div id="brandName" class="brandName">
+            <h1 id="name">HodoPhile</h1>
+            <p id="tag">Safe and Quick</p>
+        </div>
+    </a>
+    <h1 id="happy-journey">Happy Journey
+        &#128640;</h1>
+
+    <div class="personal">
+        <div>
+            <div>
+                <p>Name : </p>
+                <p style="font-weight: bold;" id="Personname"></p>
+            </div>
+            <div>
+                <p>Mobile : </p>
+                <p style="font-weight: bold;" id="mobile"></p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>Date : </p>
+                <p style="font-weight: bold;" id="bookDate"></p>
+            </div>
+            <div>
+                <p>Email : </p>
+                <p style="font-weight: bold;" id="email"></p>
+            </div>
+        </div>
+    </div>
+    <table class="receipt-table">
+        <tr>
+            <th>Flight</th>
+            <th>Journey Time</th>
+            <th>Start</th>
+            <th>Destination</th>
+            <th>Journey Duration</th>
+            <th>No. of passengers</th>
+            <th>Seats</th>
+            <th>Total Amount (&#8377;)</th>
+        </tr>
+        <tr>
+            <td id="flight">Agni</td>
+            <td id="journeyDate">12-11-2021 23:45</td>
+            <td id="start">Earth</td>
+            <td id="destination">Moon</td>
+            <td id="duration">10 hrs</td>
+            <td id="passengers">7</td>
+            <td id="seats">A11, A13</td>
+            <td id="total">70,000</td>
+        </tr>
+    </table>
+
+    <div class="status">
+        <div>
+            <p>Cabin Class : </p>
+            <p id="cabin"> Economy (N)</p>
+        </div>
+        <p>Status : </p>
+        <p> Confirmed</p>
+        <img src="/images/check-mark.png" alt="tick">
+    </div>
+    <div class="print__due">
+        <button onclick="window.print()" id="print">Print this receipt</button>
+    </div>
+
+</body>
+
+</html>
