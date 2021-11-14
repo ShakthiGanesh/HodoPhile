@@ -22,6 +22,7 @@
             document.getElementById("bookDate").innerHTML = today;
             //seats
             var spaceShip = JSON.parse(sessionStorage.spaceShip);
+            var spaceShipDetails = JSON.parse(sessionStorage.spaceShipDetails);
             var seats = spaceShip.noofPassengers;
             var s = "";
             for (let index = 0; index < seats; index++) {
@@ -30,17 +31,17 @@
             }
             document.getElementById("seats").innerHTML = s;
             //flight
-            document.getElementById("flight").innerHTML = spaceShip.flightName;
+            document.getElementById("flight").innerHTML = spaceShipDetails.flightName;
             //start
             document.getElementById("start").innerHTML = spaceShip.startLocation;
             //destination
             document.getElementById("destination").innerHTML = spaceShip.endLocation;
             //duration
-            document.getElementById("duration").innerHTML = spaceShip.timeTravel;
+            document.getElementById("duration").innerHTML = spaceShipDetails.timeTravel;
             //passengers
             document.getElementById("passengers").innerHTML = seats;
             //total
-            var pricePerHead = spaceShip.cost;
+            var pricePerHead = spaceShipDetails.cost;
             console.log(pricePerHead)
             pricePerHead = pricePerHead.substring(7);
             var total = seats * parseInt(pricePerHead);
@@ -58,7 +59,7 @@
             var yyyy = journeyDate.getFullYear();
 
             journeyDate = dd + ' / ' + mm + ' / ' + yyyy;
-            document.getElementById("journeyDate").innerHTML = journeyDate + " " + spaceShip.departureTime;
+            document.getElementById("journeyDate").innerHTML = journeyDate + " " + spaceShipDetails.departureTime;
             //email
             document.getElementById("email").innerHTML = spaceShip.email;
         });
@@ -126,7 +127,9 @@
         <p> Confirmed</p>
         <img src="/images/check-mark.png" alt="tick">
     </div>
-    <button onclick="window.print()" id="print">Print this receipt</button>
+    <div class="print__due">
+        <button onclick="window.print()" id="print">Print this receipt</button>
+    </div>
 
 </body>
 

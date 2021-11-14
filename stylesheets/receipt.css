@@ -5,6 +5,7 @@ body {
     background-color: #000015;
     font-family: "Open Sans";
     overflow-x: hidden;
+    margin: 0;
 }
 a {
     text-decoration: none;
@@ -127,10 +128,16 @@ td {
 .booking-date {
     color: rgba(255, 245, 240,1);
 }
+
+.print__due{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
 #print {
-    position: absolute;
+    /* position: absolute;
     bottom: 5px;
-    left: 50%;
+    left: 50%; */
     font-size: 15px;
     width: fit-content;
     transform: translate(-50px,-50px);

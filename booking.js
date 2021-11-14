@@ -2231,6 +2231,7 @@ const ALLFLIGHTS =
 const fullDiv = document.getElementById("fligth__details");
 
 const spaceShip = new Object();
+const spaceShipDetails = new Object();
 
 var url_string = window.location.href
 var url = new URL(url_string);
@@ -2305,43 +2306,48 @@ document.getElementById("bookTickets5").onclick = function () { bookTickets5() }
 document.getElementById("finalBookTickets").onclick = function () { finalBookTickets() };
 
 function bookTickets1() {
-    spaceShip.flightName = "INDIGO";
-    spaceShip.timeTravel = "12hrs 0mins";
-    spaceShip.departureTime = "00:15";
-    spaceShip.reachingTime = "12:15";
-    spaceShip.cost = "&#8377;5000"
+    spaceShipDetails.flightName = "INDIGO";
+    spaceShipDetails.timeTravel = "12hrs 0mins";
+    spaceShipDetails.departureTime = "00:15";
+    spaceShipDetails.reachingTime = "12:15";
+    spaceShipDetails.cost = "&#8377;5000";
+    sessionStorage.setItem('spaceShipDetails', JSON.stringify(spaceShipDetails));
 }
 
 function bookTickets2() {
-    spaceShip.flightName = "AIR INDIA";
-    spaceShip.timeTravel = "13hrs 30mins";
-    spaceShip.departureTime = "04:15";
-    spaceShip.reachingTime = "17:45";
-    spaceShip.cost = "&#8377;4000"
+    spaceShipDetails.flightName = "AIR INDIA";
+    spaceShipDetails.timeTravel = "13hrs 30mins";
+    spaceShipDetails.departureTime = "04:15";
+    spaceShipDetails.reachingTime = "17:45";
+    spaceShipDetails.cost = "&#8377;4000"
+    sessionStorage.setItem('spaceShipDetails', JSON.stringify(spaceShipDetails));
 }
 
 function bookTickets3() {
-    spaceShip.flightName = "SPICE JET";
-    spaceShip.timeTravel = "11hrs 45mins";
-    spaceShip.departureTime = "08:15";
-    spaceShip.reachingTime = "20:00";
-    spaceShip.cost = "&#8377;4200"
+    spaceShipDetails.flightName = "SPICE JET";
+    spaceShipDetails.timeTravel = "11hrs 45mins";
+    spaceShipDetails.departureTime = "08:15";
+    spaceShipDetails.reachingTime = "20:00";
+    spaceShipDetails.cost = "&#8377;4200"
+    sessionStorage.setItem('spaceShipDetails', JSON.stringify(spaceShipDetails));
 }
 
 function bookTickets4() {
-    spaceShip.flightName = "GO FIRST";
-    spaceShip.timeTravel = "8hrs 40mins";
-    spaceShip.departureTime = "09:45";
-    spaceShip.reachingTime = "18:25";
-    spaceShip.cost = "&#8377;7500"
+    spaceShipDetails.flightName = "GO FIRST";
+    spaceShipDetails.timeTravel = "8hrs 40mins";
+    spaceShipDetails.departureTime = "09:45";
+    spaceShipDetails.reachingTime = "18:25";
+    spaceShipDetails.cost = "&#8377;7500"
+    sessionStorage.setItem('spaceShipDetails', JSON.stringify(spaceShipDetails));
 }
 
 function bookTickets5() {
-    spaceShip.flightName = "EMIRATES";
-    spaceShip.timeTravel = "7hrs 25mins";
-    spaceShip.departureTime = "20:30";
-    spaceShip.reachingTime = "03:55";
-    spaceShip.cost = "&#8377;8700"
+    spaceShipDetails.flightName = "EMIRATES";
+    spaceShipDetails.timeTravel = "7hrs 25mins";
+    spaceShipDetails.departureTime = "20:30";
+    spaceShipDetails.reachingTime = "03:55";
+    spaceShipDetails.cost = "&#8377;8700"
+    sessionStorage.setItem('spaceShipDetails', JSON.stringify(spaceShipDetails));
 }
 
 function finalBookTickets() {
