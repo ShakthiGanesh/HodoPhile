@@ -127,3 +127,46 @@ td {
 .booking-date {
     color: rgba(255, 245, 240,1);
 }
+#print {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    font-size: 15px;
+    width: fit-content;
+    transform: translate(-50px,-50px);
+    background-color: green;
+    padding: 10px;
+    justify-content: center;
+    border: 0;
+    border-radius: 7px;
+    color: rgba(255, 245, 240,1);
+    cursor: pointer;
+}
+#cabin {
+    color: aqua;
+}
+@media print {
+    .brandName{
+      display:none;
+    }
+    #happy-journey {
+        text-align: center;
+    }
+    #print {
+        display: none;
+    }
+    .personal {
+        width: 90vw;
+    }
+    table {
+        width: 90vw;
+    }
+    #cabin {
+        color: blue;
+    }
+    .status {
+        width: 90vw;
+    }
+  }
+
+  

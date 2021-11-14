@@ -42,7 +42,7 @@ body {
     animation-name: appear;
     animation-duration: 5s;
     animation-timing-function: ease-out;
-    animation-delay: 1s;
+    animation-delay: 3s;
     animation-direction: initial;
     animation-iteration-count: 1;
     /* animation-fill-mode: none; */
@@ -76,7 +76,7 @@ small.click-drag {
     animation-name: appear;
     animation-duration: 3s;
     animation-timing-function: ease-out;
-    animation-delay: 3s;
+    animation-delay: 4s;
     animation-iteration-count: 1;
     animation-fill-mode: none;
     animation-play-state: running;
@@ -98,6 +98,7 @@ canvas {
     height: fit-content;
     padding-top: 70px;
 }
+
 select {
     background-color: rgba(255, 245, 240,0.8);
     width: 200px;
@@ -289,4 +290,65 @@ footer img {
     display: block;
     opacity: 0;
     transition-duration: 1s;
+}
+
+#loading {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000015;
+    z-index: 100;
+}
+body {
+    overflow: hidden;
+}
+#loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+#loading-rocket {
+    transform: rotate(-45deg);
+    width: 200px;
+    animation: vibrate 2s,uplift 1s forwards 2s;
+}
+
+@keyframes uplift {
+    0%,50% {
+        margin: 0;
+    }
+    100% {
+        margin-bottom: 100vh;
+    }
+}
+@keyframes vibrate {
+    0% { -webkit-transform: translate(2px, 1px) rotate(-45deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-45deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(-45deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(-45deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(-45deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-45deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(-45deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-45deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(-45deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(-45deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-45deg); 
+    }
+}
+
+#loading-smoke {
+    transform: rotate(-45deg);
+    width: 150px;
+    margin-bottom: -10px;
+    animation: down 1s forwards 1.9s;
+}
+@keyframes down{
+    0%,50% {
+        display: block
+    }
+    100% {
+        display: hidden;
+        opacity: 0;
+    }
 }

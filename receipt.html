@@ -21,7 +21,8 @@
             today = dd + ' / ' + mm + ' / ' + yyyy;
             document.getElementById("bookDate").innerHTML = today;
             //seats
-            var seats = 5;
+            var spaceShip = JSON.parse(sessionStorage.spaceShip);
+            var seats = spaceShip.noofPassengers;
             var s = "";
             for (let index = 0; index < seats; index++) {
                 s += "A1" + index + " ";
@@ -29,26 +30,37 @@
             }
             document.getElementById("seats").innerHTML = s;
             //flight
-            var flight = "India's Agni"
-            document.getElementById("flight").innerHTML = flight;
+            document.getElementById("flight").innerHTML = spaceShip.flightName;
             //start
-            var start = "Earth Is Home"
-            document.getElementById("start").innerHTML = start;
+            document.getElementById("start").innerHTML = spaceShip.startLocation;
             //destination
-            var destination = "Earth Is Home"
-            document.getElementById("destination").innerHTML = destination;
+            document.getElementById("destination").innerHTML = spaceShip.endLocation;
             //duration
-            var duration = "7 hrs"
-            document.getElementById("duration").innerHTML = duration;
+            document.getElementById("duration").innerHTML = spaceShip.timeTravel;
             //passengers
-            var passengers = "10"
-            document.getElementById("passengers").innerHTML = passengers;
-            //flight
-            var total = seats * 1000;
+            document.getElementById("passengers").innerHTML = seats;
+            //total
+            var pricePerHead = spaceShip.cost;
+            console.log(pricePerHead)
+            pricePerHead = pricePerHead.substring(7);
+            var total = seats * parseInt(pricePerHead);
             document.getElementById("total").innerHTML = total;
             //cabin
-            var cabin = "Economy ( N )"
-            document.getElementById("cabin").innerHTML = cabin;
+            document.getElementById("cabin").innerHTML = spaceShip.airshipClass.charAt(0).toUpperCase() + spaceShip.airshipClass.slice(1);
+            //name
+            document.getElementById("Personname").innerHTML = spaceShip.name;
+            //mobile
+            document.getElementById("mobile").innerHTML = spaceShip.phno;
+            //journeyDate
+            var journeyDate = new Date(spaceShip.dateOfTravel);
+            var dd = String(journeyDate.getDate()).padStart(2, '0');
+            var mm = String(journeyDate.getMonth() + 1).padStart(2, '0');
+            var yyyy = journeyDate.getFullYear();
+
+            journeyDate = dd + ' / ' + mm + ' / ' + yyyy;
+            document.getElementById("journeyDate").innerHTML = journeyDate + " " + spaceShip.departureTime;
+            //email
+            document.getElementById("email").innerHTML = spaceShip.email;
         });
     </script>
     <a href="/">
@@ -64,21 +76,21 @@
         <div>
             <div>
                 <p>Name : </p>
-                <p style="font-weight: bold;" id="name">Shakthi Ganesh R</p>
+                <p style="font-weight: bold;" id="Personname"></p>
             </div>
             <div>
                 <p>Mobile : </p>
-                <p style="font-weight: bold;" id="mobile">9876543210</p>
+                <p style="font-weight: bold;" id="mobile"></p>
             </div>
         </div>
         <div>
             <div>
                 <p>Date : </p>
-                <p style="font-weight: bold;" id="bookDate">13-11-2100</p>
+                <p style="font-weight: bold;" id="bookDate"></p>
             </div>
             <div>
                 <p>Email : </p>
-                <p style="font-weight: bold;" id="email">shakthi012000@gmail.com</p>
+                <p style="font-weight: bold;" id="email"></p>
             </div>
         </div>
     </div>
@@ -108,12 +120,13 @@
     <div class="status">
         <div>
             <p>Cabin Class : </p>
-            <p style="color: aqua;" id="cabin"> Economy (N)</p>
+            <p id="cabin"> Economy (N)</p>
         </div>
         <p>Status : </p>
         <p> Confirmed</p>
         <img src="/images/check-mark.png" alt="tick">
     </div>
+    <button onclick="window.print()" id="print">Print this receipt</button>
 
 </body>
 
